@@ -1,6 +1,10 @@
 from fastapi import FastAPI, WebSocket
 from pyais.stream import TCPConnection
 from pyais.messages import MessageType1, MessageType2, MessageType3, MessageType18
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
@@ -20,7 +24,6 @@ async def websocket_endpoint(websocket: WebSocket):
                 filtered_data = {attr: data_dict[attr] for attr in attributes if attr in data_dict}
                 await websocket.send_json(filtered_data)
         except Exception as e:
-            print(f"Error processing message: {e}")
+            logger.error(f"Error processing message: {e}")
             await websocket.close()
             break
-
