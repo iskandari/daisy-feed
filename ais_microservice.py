@@ -7,12 +7,13 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Replace with the serial port of your dAISy AIS receiver, e.g., "/dev/ttyUSB0" or "COM3".
 PORT = os.getenv("SERIAL_PORT", "/dev/ttyUSB0")
 
 
 app = FastAPI()
 
-PORT = "YOUR_SERIAL_PORT"  # Replace with the serial port of your dAISy AIS receiver, e.g., "/dev/ttyUSB0" or "COM3".
 BAUDRATE = 38400
 position_types = [MessageType1, MessageType2, MessageType3, MessageType18]
 attributes = ["mmsi", "speed", "lat", "lon", "course", "heading", "status", "turn"]
