@@ -1,3 +1,4 @@
+import os
 import serial
 from fastapi import FastAPI, WebSocket, Depends
 from pyais import decode
@@ -6,6 +7,8 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+PORT = os.getenv("SERIAL_PORT", "/dev/ttyUSB0")
+
 
 app = FastAPI()
 

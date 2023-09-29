@@ -9,4 +9,6 @@ RUN pip install --no-cache-dir pyais fastapi pyserial uvicorn websockets
 COPY norge_ais.py .
 COPY ais_microservice.py .
 
-CMD ["uvicorn", "norge_ais:app", "--host", "0.0.0.0", "--port", "5000"]
+ENV SERIAL_PORT=/dev/ttyUSB0
+
+CMD ["uvicorn", "ais_microservice:app", "--host", "0.0.0.0", "--port", "5000"]
