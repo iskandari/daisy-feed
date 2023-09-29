@@ -10,7 +10,7 @@ docker build -t daisy-feed .
 
 Run
 ```bash
-docker run -p 5000:5000 -e SERIAL_PORT=/dev/ttyUSB0 daisy-feed
+docker run -p 8080:5000 -e SERIAL_PORT=/dev/ttyUSB0 daisy-feed
 ```
 
 Listen
