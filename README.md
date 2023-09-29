@@ -9,13 +9,15 @@ docker build -t daisy-feed .
 ```
 
 Run
+
 ```bash
 docker run -p 8080:5000 -e SERIAL_PORT=/dev/ttyUSB0 daisy-feed
 ```
+For [Norwegian livestream](https://pyais.readthedocs.io/en/latest/examples.html)
+change command to `norge_ais:app`
+
 
 Listen
-
-
 ```bash
 websocat ws://localhost:8080/ws  
 
@@ -28,4 +30,5 @@ websocat ws://localhost:8080/ws
 ### Requirements
 
 - Docker
+- dAISY plugged in
 - [websocat](https://github.com/vi/websocat)
