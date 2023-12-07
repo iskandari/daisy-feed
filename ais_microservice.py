@@ -11,7 +11,6 @@ logger = logging.getLogger(__name__)
 # Replace with the serial port of your dAISy AIS receiver, e.g., "/dev/ttyUSB0" or "COM3".
 PORT = os.getenv("SERIAL_PORT", "/dev/ttyUSB0")
 
-
 app = FastAPI()
 
 BAUDRATE = 38400
